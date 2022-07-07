@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  //final String? label;
+  final Widget? label;
   final String? hint;
   final IconData? icon;
   final IconData? prefix;
@@ -15,7 +15,7 @@ class CustomTextField extends StatelessWidget {
 
   const CustomTextField({
     Key? key,
-    //this.label,
+    this.label,
     this.hint,
     this.icon,
     this.prefix,
@@ -39,8 +39,8 @@ class CustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           filled: false,
           fillColor: Color.fromARGB(255, 255, 255, 255),
-          //label: Text(label),
-          //labelStyle: const TextStyle(color: Colors.black,),
+          label: label,
+          labelStyle: const TextStyle(color: Colors.black,),
           hintText: hint,
           hintStyle: const TextStyle(color: Colors.black,fontSize: 15, fontFamily: 'Sora'),
           border: const OutlineInputBorder(
@@ -55,8 +55,8 @@ class CustomTextField extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(6)),
             borderSide: BorderSide(color: Color.fromARGB(255, 255, 0, 0))
             ),
-          icon: icon == null ? null : Icon(icon),
-          suffixIcon: suffix == null ? null : Icon(suffix),
+          icon: icon == null ? null : Icon(icon, color: Colors.red,),
+          suffixIcon: suffix == null ? null : Icon(suffix, color: const Color.fromARGB(255, 255, 55, 55)),
           prefixIcon: prefix == null ? null : Icon(prefix),
         )           
       ),
