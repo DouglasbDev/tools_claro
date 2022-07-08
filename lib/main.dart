@@ -1,3 +1,5 @@
+import 'package:claro_tools/src/view/home.dart';
+import 'package:claro_tools/src/widgets/grid_view.dart';
 import 'package:flutter/material.dart';
 import 'src/view/login.dart';
 
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const PageLogin(),
+      home: const MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
   }

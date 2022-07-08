@@ -37,7 +37,7 @@ class CustomTextField extends StatelessWidget {
         onChanged: onChanged,
         obscureText: obscureText,
         decoration: InputDecoration(
-          filled: false,
+          filled: true,
           fillColor: Color.fromARGB(255, 255, 255, 255),
           label: label,
           labelStyle: const TextStyle(color: Colors.black,),
@@ -48,7 +48,7 @@ class CustomTextField extends StatelessWidget {
             borderSide: BorderSide(color: Colors.transparent),
           ),
           focusedBorder:const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(6)),
+            borderRadius: BorderRadius.all(Radius.circular(20)),
             borderSide: BorderSide(color: Colors.transparent),
           ),
           errorBorder:const OutlineInputBorder(
@@ -57,7 +57,7 @@ class CustomTextField extends StatelessWidget {
             ),
           icon: icon == null ? null : Icon(icon, color: Colors.red,),
           suffixIcon: suffix == null ? null : Icon(suffix, color: const Color.fromARGB(255, 255, 55, 55)),
-          prefixIcon: prefix == null ? null : Icon(prefix),
+          prefixIcon: prefix == null ? null : Icon(prefix, color: Colors.black),
         )           
       ),
     );
