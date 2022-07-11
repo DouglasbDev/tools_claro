@@ -2,6 +2,8 @@ import 'package:claro_tools/src/widgets/card_service.dart';
 import 'package:claro_tools/src/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
+import 'button_menu.dart';
+
 class DrawerMenu extends StatefulWidget {
   DrawerMenu({Key? key}) : super(key: key);
 
@@ -22,9 +24,9 @@ class _DrawerMenuState extends State<DrawerMenu> {
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: AnimatedContainer(
-          width: isOpen ? 380 : 140,
+          width: isOpen ? 380 : 80,
           duration: const Duration(milliseconds: 300),
-          padding: const EdgeInsets.all(50),
+          padding: const EdgeInsets.all(15),
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(30)),
             color: Color(0xffD52B1E), //TODO var cores
@@ -42,6 +44,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     isOpen
                         ? Container(
@@ -57,42 +60,57 @@ class _DrawerMenuState extends State<DrawerMenu> {
                               width: MediaQuery.of(context).size.height / 9,
                             ),
                           )
-                        : SizedBox(
+                        : const SizedBox(
                             height: 30,
                           ),
-                    const Expanded(
-                        child: CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg"),
-                    )),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.arrow_back),
+                    ),
                   ],
                 ),
               ),
-              SizedBox(
-                height: 40,
-              ),
-              const Center(
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Microsserviços",
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
               isOpen
-                  ? const CustomTextField(
-                      hint: 'Pesquisa',
-                      prefix: Icons.search,
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg"),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        CustomTextField(
+                          hint: 'Pesquisa',
+                          prefix: Icons.search,
+                        ),
+                        Center(
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Microsserviços",
+                              style: TextStyle(
+                                fontSize: 25,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     )
-                  : const SimpleCard(
-                      size: 50,
-                      icon: Icon(Icons.search),
-                      label: Text('Pesquisar'),
+                  : CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg"),
                     ),
+              const SizedBox(
+                height: 10,
+              ),
+              const SimpleCard(
+                size: 50,
+                icon: Icon(Icons.search),
+                label: Text('Pesquisar'),
+              ),
               SizedBox(
                 height: 30,
               ),
@@ -111,6 +129,28 @@ class _DrawerMenuState extends State<DrawerMenu> {
                   },
                 ),
               ),
+              isOpen
+                  ? Row(
+                      children: [
+                        Text(
+                          'tools v.01.2022 by redeinova',
+                          style: TextStyle(fontSize: 10),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        ButtonMenu(),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        ButtonMenu(),
+                      ],
+                    )
+                  : const SimpleCard(
+                      size: 50,
+                      icon: Icon(Icons.search),
+                      label: Text('Pesquisar'),
+                    ),
             ],
           ),
         ),

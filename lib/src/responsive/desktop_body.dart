@@ -13,24 +13,28 @@ class MyDesktopBody extends StatelessWidget {
       child: Scaffold(
         body: Stack(
           children: [
-              SizedBox(
-                height: double.infinity,
-                width: double.infinity,
-                child: Image.asset(
-                  'assets/images/claro_login.png',
-                  fit: BoxFit.cover,
-                ),
+            SizedBox(
+              height: double.infinity,
+              width: double.infinity,
+              child: Image.asset(
+                'assets/images/claro_login.png',
+                fit: BoxFit.cover,
               ),
+            ),
             Positioned(
               top: 0,
               bottom: 0,
-              right: 300,
+              right: 180,
               child: Center(
                 child: Container(
                   padding: EdgeInsets.all(10),
-                      constraints: const BoxConstraints(minWidth: 200, maxWidth: 500, minHeight: 300, maxHeight: 500),
+                  constraints: const BoxConstraints(
+                      minWidth: 200,
+                      maxWidth: 500,
+                      minHeight: 300,
+                      maxHeight: 500),
                   child: AspectRatio(
-                    aspectRatio: 3/4,
+                    aspectRatio: 3 / 4,
                     child: Container(
                       alignment: Alignment.bottomLeft,
                       height: 500,
@@ -85,47 +89,50 @@ class MyDesktopBody extends StatelessWidget {
                           const SizedBox(
                             height: 26,
                           ),
-                          LayoutBuilder(
-                            builder: (context, constraints) {
-                              return SizedBox(
-                                width: constraints.maxWidth -60,
-                                height: 40,
-                                child: ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => const MyHomePage()),
-                                    );
-                                  },
-                                  child: const Text(
-                                    'Entrar',
-                                    style: TextStyle(
-                                        fontFamily: 'Sora',
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                  style: ButtonStyle(
-                                    shape: MaterialStateProperty.resolveWith((states) {
-                                      return RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(8));
-                                    }),
-                                    backgroundColor:
-                                        MaterialStateProperty.resolveWith<Color?>(
-                                            (states) {
-                                      if (states.contains(MaterialState.pressed)) {
-                                        return const Color.fromARGB(255, 199, 0, 0);
-                                      }
-                                      if (states.contains(MaterialState.hovered)) {
-                                        return Colors.redAccent;
-                                      }
-                                      return const Color.fromARGB(255, 255, 55, 55);
-                                    }),
-                                  ),
+                          LayoutBuilder(builder: (context, constraints) {
+                            return SizedBox(
+                              width: constraints.maxWidth - 60,
+                              height: 40,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const MyHomePage()),
+                                  );
+                                },
+                                child: const Text(
+                                  'Entrar',
+                                  style: TextStyle(
+                                      fontFamily: 'Sora',
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600),
                                 ),
-                              );
-                            }
-                          ),
+                                style: ButtonStyle(
+                                  shape: MaterialStateProperty.resolveWith(
+                                      (states) {
+                                    return RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(8));
+                                  }),
+                                  backgroundColor:
+                                      MaterialStateProperty.resolveWith<Color?>(
+                                          (states) {
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
+                                      return const Color.fromARGB(
+                                          255, 199, 0, 0);
+                                    }
+                                    if (states
+                                        .contains(MaterialState.hovered)) {
+                                      return Colors.redAccent;
+                                    }
+                                    return const Color(0xffD52B1E);
+                                  }),
+                                ),
+                              ),
+                            );
+                          }),
                           const SizedBox(
                             height: 15,
                           ),
@@ -136,7 +143,7 @@ class MyDesktopBody extends StatelessWidget {
                                 'precisa de ajuda?',
                                 style: TextStyle(
                                   fontSize: 15,
-                                  color: Color.fromARGB(189, 189, 191, 199),
+                                  color: Color(0xffBDBFC7),
                                   fontFamily: 'Sora',
                                 ),
                               ),
@@ -145,29 +152,29 @@ class MyDesktopBody extends StatelessWidget {
                                   foregroundColor:
                                       MaterialStateProperty.resolveWith<Color?>(
                                           (states) {
-                                    if (states.contains(MaterialState.pressed)) {
-                                      return const Color.fromARGB(255, 199, 0, 0);
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
+                                      return const Color.fromARGB(
+                                          255, 199, 0, 0);
                                     }
-                                    if (states.contains(MaterialState.hovered)) {
+                                    if (states
+                                        .contains(MaterialState.hovered)) {
                                       return Colors.redAccent;
                                     }
-                                    return const Color.fromARGB(255, 255, 55, 55);
+                                    return const Color(0xffD52B1E);
                                   }),
-                                  textStyle:
-                                      MaterialStateProperty.resolveWith<TextStyle?>(
-                                          (states) {
-                                    if (states.contains(MaterialState.pressed)) {
+                                  textStyle: MaterialStateProperty.resolveWith<
+                                      TextStyle?>((states) {
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
                                       return const TextStyle(
                                           fontWeight: FontWeight.w700,
-                                          color: Colors.red);
+                                          color: Color(0xffD52B1E));
                                     }
-                                    if (states.contains(MaterialState.hovered)) {
-                                      return const TextStyle(
-                                          color: Colors.redAccent);
-                                    }
+
                                     return const TextStyle(
                                         fontWeight: FontWeight.w500,
-                                        color: Colors.red,
+                                        color: Color(0xffD52B1E),
                                         fontFamily: 'Sora');
                                   }),
                                 ),

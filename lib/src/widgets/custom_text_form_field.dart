@@ -56,7 +56,7 @@ class CustomTextField extends StatelessWidget {
             borderSide: BorderSide(color: Color.fromARGB(255, 255, 0, 0))
             ),
           icon: icon == null ? null : Icon(icon, color: Colors.red,),
-          suffixIcon: suffix == null ? null : Icon(suffix, color: const Color.fromARGB(255, 255, 55, 55)),
+          suffixIcon: suffix == null ? null : Icon(suffix, color: const Color(0xffD52B1E)),
           prefixIcon: prefix == null ? null : Icon(prefix, color: Colors.black),
         )           
       ),
