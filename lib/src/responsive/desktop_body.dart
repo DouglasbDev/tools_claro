@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import '../view/home.dart';
-import '../widgets/custom_text_form_field.dart';
+import '../widgets/widget_text_form_field.dart';
 
 class MyDesktopBody extends StatelessWidget {
   const MyDesktopBody({Key? key}) : super(key: key);
@@ -24,7 +24,7 @@ class MyDesktopBody extends StatelessWidget {
             Positioned(
               top: 0,
               bottom: 0,
-              right: 180,
+              right: 120,
               child: Center(
                 child: Container(
                   padding: EdgeInsets.all(10),
@@ -84,7 +84,7 @@ class MyDesktopBody extends StatelessWidget {
                           ),
                           const CustomTextField(
                             hint: 'Senha',
-                            suffix: Icons.lock,
+                            suffix: Icons.remove_red_eye_sharp,
                           ),
                           const SizedBox(
                             height: 26,

@@ -1,8 +1,8 @@
-import 'package:claro_tools/src/widgets/button_menu.dart';
 import 'package:claro_tools/src/widgets/drawer_menu.dart';
 import 'package:flutter/material.dart';
+import '../widgets/button_menu_widget.dart';
 import '../widgets/card_service.dart';
-import '../widgets/custom_text_form_field.dart';
+import '../widgets/widget_text_form_field.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
@@ -22,9 +22,27 @@ class _MyHomePageState extends State<MyHomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           DrawerMenu(),
-          ButtonMenu(),
-          ButtonMenu(),
-          ButtonMenu(),
+          SizedBox(
+            width: 200,
+          ),
+          ButtonWidget(
+            nome: 'Home',
+            onPressed: () {},
+          ),
+          SizedBox(
+            width: 50,
+          ),
+          ButtonWidget(
+            nome: 'Widget',
+            onPressed: () {},
+          ),
+          SizedBox(
+            width: 50,
+          ),
+          ButtonWidget(
+            nome: 'Loja',
+            onPressed: () {},
+          ),
         ],
       ),
     );
