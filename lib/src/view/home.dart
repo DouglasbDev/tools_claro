@@ -25,22 +25,22 @@ class _MyHomePageState extends State<MyHomePage> {
           SizedBox(
             width: 200,
           ),
-          ButtonWidget(
-            nome: 'Home',
+          CustomButton(
+            child: Text("Sair"),
             onPressed: () {},
           ),
           SizedBox(
             width: 50,
           ),
-          ButtonWidget(
-            nome: 'Widget',
+          CustomButton(
+            child: Text("Sair"),
             onPressed: () {},
           ),
           SizedBox(
             width: 50,
           ),
-          ButtonWidget(
-            nome: 'Loja',
+          CustomButton(
+            child: Text("Sair"),
             onPressed: () {},
           ),
         ],

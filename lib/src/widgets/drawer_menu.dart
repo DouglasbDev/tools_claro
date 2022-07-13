@@ -6,6 +6,17 @@ import 'package:flutter/material.dart';
 class DrawerMenu extends StatefulWidget {
   DrawerMenu({Key? key}) : super(key: key);
 
+  List<String> images = [
+    "images/ibase_de_dados.png",
+    "images/ijornada.png",
+    "images/itrajetos.png",
+    "images/iestoque.png",
+    "images/ipesquisa.png",
+    "images/itarefas.png",
+    "images/itrajetos.png",
+    "images/iavisos.png",
+  ];
+
   @override
   State<DrawerMenu> createState() => _DrawerMenuState();
 }
@@ -111,7 +122,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                       ),
                     ],
                   )
-                : const SimpleCard(
+                : SimpleCard(
                     size: 50,
                     icon: Icon(Icons.search),
                     label: Text('Pesquisar'),
@@ -128,7 +139,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                 ),
                 itemCount: 9,
                 itemBuilder: (context, index) {
-                  return const SimpleCard(
+                  return SimpleCard(
                     size: 100,
                   );
                 },
@@ -148,27 +159,32 @@ class _DrawerMenuState extends State<DrawerMenu> {
                         width: 30,
                       ),
                       Expanded(
-                          child: ButtonWidget(
-                        nome: "Suporte",
+                          child: CustomButton(
+                        icon: const Icon(Icons.phone),
+                        borderRadius: BorderRadius.circular(10),
+                        child: const Text("Sair"),
                         onPressed: () {},
                       )),
                       SizedBox(
                         width: 30,
                       ),
                       Expanded(
-                          child: ButtonWidget(
-                        nome: "Sair",
+                          child: CustomButton(
+                        borderRadius: BorderRadius.circular(10),
+                        child: Text("Sair"),
                         onPressed: () {},
                       )),
                     ],
                   )
-                : ButtonWidget(
-                    nome: "",
+                : CustomButton(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Text("Sair"),
                     onPressed: () {},
                   ),
             !isOpen
-                ? ButtonWidget(
-                    nome: "",
+                ? CustomButton(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Text("Sair"),
                     onPressed: () {},
                   )
                 : SizedBox.shrink()
