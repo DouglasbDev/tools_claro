@@ -1,6 +1,5 @@
 import 'package:claro_tools/src/view/home.dart';
 import 'package:claro_tools/src/widgets/card_service.dart';
-import 'package:claro_tools/src/widgets/grid_view.dart';
 import 'package:flutter/material.dart';
 import 'src/view/login.dart';
 

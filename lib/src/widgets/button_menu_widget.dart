@@ -8,24 +8,53 @@ class CustomButton extends StatefulWidget {
   final VoidCallback? onPressed;
   final BorderRadius? borderRadius;
   final Icon? icon;
-  CustomButton({
+  final double sizeh;
+  final double sizew;
+
+  const CustomButton._({
     Key? key,
     required this.child,
     this.color = Colors.blue,
     required this.onPressed,
     this.borderRadius,
     this.icon,
+    this.sizeh = 50,
+    this.sizew = 150,
   }) : super(key: key);
+
+  factory CustomButton(
+          {required Widget child,
+          VoidCallback? onPressed,
+          BorderRadius? borderRadius,
+          Color color = Colors.blue,
+          double sizeh = 50,
+          double sizew = 150}) =>
+      CustomButton._(
+        child: child,
+        onPressed: onPressed,
+        borderRadius: borderRadius,
+        color: color,
+        sizeh: sizeh,
+        sizew: sizew,
+      );
 
   factory CustomButton.icon({
     required Icon icon,
-    required Widget title,
+    required Widget child,
     VoidCallback? onPressed,
+    BorderRadius? borderRadius,
+    Color color = Colors.blue,
+    double sizeh = 50,
+    double sizew = 150,
   }) =>
-      CustomButton(
-        child: title,
+      CustomButton._(
+        child: child,
         onPressed: onPressed,
         icon: icon,
+        borderRadius: borderRadius,
+        color: color,
+        sizeh: sizeh,
+        sizew: sizew,
       );
 
   @override
@@ -67,8 +96,8 @@ class _CustomButtonState extends State<CustomButton> {
         },
         borderRadius: widget.borderRadius,
         child: Container(
-          height: 50,
-          width: 200,
+          height: widget.sizeh,
+          width: widget.sizew,
           alignment: Alignment.center,
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             if (widget.icon != null) ...{

@@ -1,4 +1,5 @@
-import 'package:claro_tools/src/widgets/drawer_menu.dart';
+import 'package:claro_tools/src/components/drawer_menu.dart';
+import 'package:claro_tools/src/widgets/custom_card_chat.dart';
 import 'package:flutter/material.dart';
 import '../widgets/button_menu_widget.dart';
 import '../widgets/card_service.dart';
@@ -22,26 +23,43 @@ class _MyHomePageState extends State<MyHomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           DrawerMenu(),
-          SizedBox(
+          const SizedBox(
             width: 200,
           ),
           CustomButton(
-            child: Text("Sair"),
+            child: const Text("Sair"),
             onPressed: () {},
           ),
-          SizedBox(
+          const SizedBox(
             width: 50,
           ),
           CustomButton(
-            child: Text("Sair"),
+            sizew: 50,
+            child: const Text("Sair"),
             onPressed: () {},
           ),
-          SizedBox(
+          const SizedBox(
             width: 50,
           ),
           CustomButton(
-            child: Text("Sair"),
+            child: const Text("Sair"),
             onPressed: () {},
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 600),
+                child: Row(
+                  children: const [
+                    CustomCardChat(),
+                    CustomCardChat(),
+                  ],
+                ),
+              ),
+            ],
           ),
         ],
       ),
