@@ -122,9 +122,9 @@ class _DrawerMenuState extends State<DrawerMenu> {
                       ),
                     ],
                   )
-                :  SimpleCard(
+                : SimpleCard(
                     size: 50,
-                    icon:  Icon(Icons.search),
+                    icon: Icon(Icons.search),
                     label: Text('Pesquisar'),
                   ),
             const SizedBox(
@@ -160,15 +160,18 @@ class _DrawerMenuState extends State<DrawerMenu> {
                       ),
                       Expanded(
                           child: CustomButton.icon(
+                        color: Colors.white,
                         icon: const Icon(Icons.phone),
                         child: const Text("Sair"),
+                        borderRadius: BorderRadius.circular(10),
                         onPressed: () {},
                       )),
-                     const SizedBox(
+                      const SizedBox(
                         width: 30,
                       ),
                       Expanded(
                           child: CustomButton(
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                         child: const Text("Sair"),
                         onPressed: () {},
