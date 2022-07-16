@@ -23,32 +23,14 @@ class _MyHomePageState extends State<MyHomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           DrawerMenu(),
-          const SizedBox(
-            width: 200,
-          ),
-          CustomButton(
-            child: const Text("Sair"),
-            onPressed: () {},
-          ),
-          const SizedBox(
-            width: 50,
-          ),
-          CustomButton(
-            sizew: 50,
-            child: const Text("Sair"),
-            onPressed: () {},
-          ),
-          const SizedBox(
-            width: 50,
-          ),
-          CustomButton(
-            child: const Text("Sair"),
-            onPressed: () {},
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomCardChat(),
+            ],
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 600),
@@ -56,8 +38,35 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: const [
                     CustomCardChat(),
                     CustomCardChat(),
+                    CustomCardChat(),
+                    CustomCardChat()
                   ],
                 ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomButton(
+                child: const Text("Sair"),
+                onPressed: () {},
+              ),
+              const SizedBox(
+                width: 50,
+              ),
+              CustomButton(
+                sizew: 50,
+                child: const Text("Sair"),
+                onPressed: () {},
+              ),
+              const SizedBox(
+                width: 50,
+              ),
+              CustomButton(
+                child: const Text("Sair"),
+                onPressed: () {},
               ),
             ],
           ),
