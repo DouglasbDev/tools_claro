@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-class CardChat extends StatelessWidget {
-  final String? texto;
+class CardAviso extends StatelessWidget {
+  final Widget texto;
   final String? imageUrl;
   final String? title;
   final String? subtitle;
   final IconData? icon;
   final VoidCallback? onpressed;
 
-  const CardChat({
+  const CardAviso({
     Key? key,
     this.imageUrl,
     this.title,
     this.subtitle,
     this.icon,
     this.onpressed,
-    this.texto,
+    this.texto = const Text('Escreva um Aviso'),
   }) : super(key: key);
 
   @override
@@ -68,6 +68,7 @@ class CardChat extends StatelessWidget {
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
                           title!,
@@ -78,9 +79,8 @@ class CardChat extends StatelessWidget {
                           child: Text(subtitle!),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 30),
-                          child: Text(texto!),
-                        )
+                            padding: const EdgeInsets.only(top: 30),
+                            child: texto)
                       ],
                     ),
                   ),
