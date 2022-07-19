@@ -1,8 +1,11 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:claro_tools/src/widgets/button_menu_widget.dart';
 import 'package:claro_tools/src/widgets/card_service.dart';
 import 'package:claro_tools/src/widgets/widget_text_form_field.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class DrawerMenu extends StatefulWidget {
   DrawerMenu({Key? key}) : super(key: key);
 
@@ -122,7 +125,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                       ),
                     ],
                   )
-                : SimpleCard(
+                : const SimpleCard(
                     size: 50,
                     icon: Icon(Icons.search),
                     label: Text('Pesquisar'),
@@ -139,7 +142,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                 ),
                 itemCount: 9,
                 itemBuilder: (context, index) {
-                  return SimpleCard(
+                  return const SimpleCard(
                     size: 100,
                   );
                 },

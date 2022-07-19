@@ -1,12 +1,6 @@
 import 'package:claro_tools/src/components/drawer_menu.dart';
-import 'package:claro_tools/src/widgets/credit_card.dart';
 import 'package:claro_tools/src/widgets/custom_avisos.dart';
-import 'package:claro_tools/src/widgets/custom_card_chat.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import '../widgets/button_menu_widget.dart';
-import '../widgets/card_service.dart';
-import '../widgets/widget_text_form_field.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
@@ -34,47 +28,68 @@ class _MyHomePageState extends State<MyHomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Text('Avisos'),
                     Padding(
                       padding: EdgeInsets.only(
                         top: MediaQuery.of(context).size.height / 1.5,
                       ),
-                      child: Row(
-                        children: [
-                          ListView(
-                            scrollDirection: Axis.horizontal,
-                            children: [
-                              CardAviso(
-                                title: 'Douglas Oliveira',
-                                subtitle: 'Developement',
-                                texto: const Text(
-                                  'Tentando melhorar o card de avisos, atualizar ele hoje',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                imageUrl:
-                                    "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg",
-                                icon: Icons.more_horiz,
-                                onpressed: () {},
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            CardAviso(
+                              title: 'Douglas Oliveira',
+                              subtitle: 'Developement',
+                              texto: const Text(
+                                'Tentando melhorar o card de avisos, atualizar ele hoje',
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
                               ),
-                              CardAviso(
-                                title: 'João é Sal',
-                                subtitle: 'Developement',
-                                texto: Text(
-                                  'Tentando melhorar o card',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                imageUrl:
-                                    "https://passcod.name/avatars/evil-sailor-whale.png",
-                                icon: Icons.more_horiz,
-                                onpressed: () {},
+                              imageUrl:
+                                  "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg",
+                              icon: Icons.more_horiz,
+                              onpressed: () {},
+                            ),
+                            CardAviso(
+                              title: 'João é Sal',
+                              subtitle: 'Developement',
+                              texto: const Text(
+                                'Tentando melhorar o card',
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
                               ),
-                            ],
-                          ),
-                        ],
+                              imageUrl:
+                                  "https://passcod.name/avatars/evil-sailor-whale.png",
+                              icon: Icons.more_horiz,
+                              onpressed: () {},
+                            ),
+                            CardAviso(
+                              title: 'Douglas Oliveira',
+                              subtitle: 'Developement',
+                              texto: const Text(
+                                'Tentando melhorar o card de avisos, atualizar ele hoje',
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
+                              imageUrl:
+                                  "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg",
+                              icon: Icons.more_horiz,
+                              onpressed: () {},
+                            ),
+                            CardAviso(
+                              title: 'João é Sal',
+                              subtitle: 'Developement',
+                              texto: const Text(
+                                'Tentando melhorar o card',
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
+                              imageUrl:
+                                  "https://passcod.name/avatars/evil-sailor-whale.png",
+                              icon: Icons.more_horiz,
+                              onpressed: () {},
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],

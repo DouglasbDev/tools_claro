@@ -21,7 +21,7 @@ class CardAviso extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.only(bottom: 10),
       child: Material(
         color: Colors.white,
         borderRadius: BorderRadius.circular(30),
@@ -40,7 +40,7 @@ class CardAviso extends StatelessWidget {
               right: 10,
             ),
             child: Padding(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +72,7 @@ class CardAviso extends StatelessWidget {
                       children: [
                         Text(
                           title!,
-                          style: TextStyle(fontSize: 20),
+                          style: const TextStyle(fontSize: 20),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 8),
