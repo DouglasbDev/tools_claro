@@ -1,11 +1,9 @@
 // ignore_for_file: sort_child_properties_last, prefer_const_constructors_in_immutables
-import 'dart:math';
-
 import 'package:claro_tools/src/components/box_equipe.dart';
 import 'package:flutter/material.dart';
 import '../components/drawer_menu.dart';
-import '../widgets/button_menu_widget.dart';
-import '../widgets/custom_avisos.dart';
+import '../widgets/widget_button.dart';
+import '../widgets/widget_card_avisos.dart';
 
 class HomeTeste extends StatefulWidget {
   HomeTeste({Key? key}) : super(key: key);
@@ -25,7 +23,7 @@ class _HomeTesteState extends State<HomeTeste> {
           DrawerMenu(),
           Container(
             child: Padding(
-              padding: const EdgeInsets.only(left: 0, right: 300),
+              padding: const EdgeInsets.only(left: 0, right: 46),
               child: SizedBox(
                 height: MediaQuery.of(context).size.height / 0.9,
                 width: MediaQuery.of(context).size.height / 0.86,
@@ -88,6 +86,9 @@ class _HomeTesteState extends State<HomeTeste> {
                           icon: Icons.more_horiz,
                           onpressed: () {},
                         ),
+                        SizedBox(
+                          width: 20,
+                        ),
                         CardAviso(
                           title: 'Douglas Oliveira',
                           subtitle: 'Developement',
@@ -127,6 +128,14 @@ class _HomeTesteState extends State<HomeTeste> {
                           imageUrl:
                               "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg",
                           icon: Icons.more_horiz,
+                          guiaAviso: const Text(
+                            'Guia pratico tools.pdf',
+                            style: TextStyle(fontSize: 10),
+                          ),
+                          dataAviso: const Text(
+                            'postado as 8:23 em 20/07/2022',
+                            style: TextStyle(fontSize: 10),
+                          ),
                           onpressed: () {},
                         ),
                         SizedBox(
@@ -144,7 +153,15 @@ class _HomeTesteState extends State<HomeTeste> {
                               "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg",
                           icon: Icons.more_horiz,
                           onpressed: () {},
-                        )
+                          guiaAviso: const Text(
+                            'Guia pratico tools.pdf',
+                            style: TextStyle(fontSize: 10),
+                          ),
+                          dataAviso: const Text(
+                            'postado as 8:23 em 20/07/2022',
+                            style: TextStyle(fontSize: 10),
+                          ),
+                        ),
                       ],
                     ),
                   ],

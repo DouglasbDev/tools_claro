@@ -10,6 +10,8 @@ class CustomButton extends StatefulWidget {
   final Icon? icon;
   final double sizeh;
   final double sizew;
+  final Color hovercolor;
+  final Color highlightcolor;
 
   const CustomButton._({
     Key? key,
@@ -20,15 +22,20 @@ class CustomButton extends StatefulWidget {
     this.icon,
     this.sizeh = 50,
     this.sizew = 150,
+    this.hovercolor = const Color(0xff088AFF),
+    this.highlightcolor = const Color(0xffD52B1E),
   }) : super(key: key);
 
-  factory CustomButton(
-          {required Widget child,
-          VoidCallback? onPressed,
-          BorderRadius? borderRadius,
-          Color color = Colors.blue,
-          double sizeh = 50,
-          double sizew = 150}) =>
+  factory CustomButton({
+    required Widget child,
+    VoidCallback? onPressed,
+    BorderRadius? borderRadius,
+    Color color = Colors.blue,
+    double sizeh = 50,
+    double sizew = 150,
+    Color hovercolor = const Color(0xff088AFF),
+    Color highlightcolor = const Color(0xffD52B1E),
+  }) =>
       CustomButton._(
         child: child,
         onPressed: onPressed,
@@ -36,16 +43,20 @@ class CustomButton extends StatefulWidget {
         color: color,
         sizeh: sizeh,
         sizew: sizew,
+        hovercolor: hovercolor,
+        highlightcolor: highlightcolor,
       );
 
   factory CustomButton.icon({
     required Icon icon,
-    required Widget child,
+    Widget child = const Text(''),
     VoidCallback? onPressed,
     BorderRadius? borderRadius,
     Color color = Colors.blue,
     double sizeh = 50,
     double sizew = 150,
+    Color hovercolor = const Color(0xff088AFF),
+    Color highlightcolor = const Color(0xffD52B1E),
   }) =>
       CustomButton._(
         child: child,
@@ -55,6 +66,8 @@ class CustomButton extends StatefulWidget {
         color: color,
         sizeh: sizeh,
         sizew: sizew,
+        hovercolor: hovercolor,
+        highlightcolor: highlightcolor,
       );
 
   @override
@@ -77,9 +90,11 @@ class _CustomButtonState extends State<CustomButton> {
   Widget build(BuildContext context) {
     return Material(
       color: isDisable ? Colors.grey[300] : widget.color,
-      borderRadius: widget.borderRadius,
+      borderRadius: borderRadius,
       elevation: isDisable ? 0 : elevation,
       child: InkWell(
+        highlightColor: widget.highlightcolor,
+        hoverColor: widget.hovercolor,
         onTap: !isDisable
             ? null
             : () {
@@ -94,7 +109,7 @@ class _CustomButtonState extends State<CustomButton> {
           elevation = 4;
           setState(() {});
         },
-        borderRadius: widget.borderRadius,
+        borderRadius: borderRadius,
         child: Container(
           height: widget.sizeh,
           width: widget.sizew,
@@ -109,7 +124,7 @@ class _CustomButtonState extends State<CustomButton> {
             widget.child,
           ]),
           decoration: BoxDecoration(
-            borderRadius: widget.borderRadius,
+            borderRadius: borderRadius,
           ),
         ),
       ),

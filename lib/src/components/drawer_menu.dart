@@ -1,9 +1,9 @@
 // ignore_for_file: sort_child_properties_last
-
-import 'package:claro_tools/src/widgets/button_menu_widget.dart';
+import 'package:claro_tools/src/widgets/widget_button.dart';
 import 'package:claro_tools/src/widgets/card_service.dart';
 import 'package:claro_tools/src/widgets/widget_text_form_field.dart';
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 
 // ignore: must_be_immutable
 class DrawerMenu extends StatefulWidget {
@@ -29,7 +29,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(10),
       child: AnimatedContainer(
         width: isOpen ? 380 : 100,
         duration: const Duration(milliseconds: 300),
@@ -49,9 +49,11 @@ class _DrawerMenuState extends State<DrawerMenu> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.only(
+                bottom: 20,
+              ),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   isOpen
                       ? Container(
@@ -69,27 +71,31 @@ class _DrawerMenuState extends State<DrawerMenu> {
                         )
                       : const SizedBox.shrink(),
                   isOpen
-                      ? Expanded(
-                          child: GestureDetector(
-                            child: IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  isOpen = !isOpen;
-                                });
-                              },
-                              icon: const Icon(Icons.arrow_back),
+                      ? InkWell(
+                          child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                isOpen = !isOpen;
+                              });
+                            },
+                            icon: const Icon(
+                              LineIcons.alternateArrowCircleLeft,
+                              size: 30,
+                              color: Colors.black54,
                             ),
                           ),
                         )
-                      : Expanded(
-                          child: GestureDetector(
-                            child: IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  isOpen = !isOpen;
-                                });
-                              },
-                              icon: const Icon(Icons.arrow_right),
+                      : InkWell(
+                          child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                isOpen = !isOpen;
+                              });
+                            },
+                            icon: const Icon(
+                              LineIcons.alternateArrowCircleRight,
+                              size: 30,
+                              color: Colors.black54,
                             ),
                           ),
                         ),
@@ -125,10 +131,16 @@ class _DrawerMenuState extends State<DrawerMenu> {
                       ),
                     ],
                   )
-                : const SimpleCard(
+                : SimpleCard(
+                    color: Colors.white60,
                     size: 50,
-                    icon: Icon(Icons.search),
-                    label: Text('Pesquisar'),
+                    label: const Text('label'),
+                    borderRadius: BorderRadius.circular(50),
+                    icon: Icon(
+                      Icons.search,
+                      color: Color(0xff8C8C8C),
+                      size: 100,
+                    ),
                   ),
             const SizedBox(
               height: 30,
@@ -163,9 +175,16 @@ class _DrawerMenuState extends State<DrawerMenu> {
                       ),
                       Expanded(
                           child: CustomButton.icon(
+                        sizeh: 36,
                         color: Colors.white,
-                        icon: const Icon(Icons.phone),
-                        child: const Text("Sair"),
+                        icon: const Icon(
+                          LineIcons.questionCircle,
+                          color: Colors.grey,
+                        ),
+                        child: const Text(
+                          "Suporte",
+                          style: TextStyle(color: Colors.grey),
+                        ),
                         borderRadius: BorderRadius.circular(10),
                         onPressed: () {},
                       )),
@@ -173,24 +192,35 @@ class _DrawerMenuState extends State<DrawerMenu> {
                         width: 30,
                       ),
                       Expanded(
-                          child: CustomButton(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        child: const Text("Sair"),
-                        onPressed: () {},
-                      )),
+                        child: CustomButton.icon(
+                          sizeh: 36,
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          child: const Text(
+                            "Sair",
+                            style: TextStyle(
+                              color: Color(0xff8C8C8C),
+                            ),
+                          ),
+                          icon: const Icon(
+                            Icons.exit_to_app_outlined,
+                            color: Color(0xff8C8C8C),
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
                     ],
                   )
-                : CustomButton(
-                    borderRadius: BorderRadius.circular(10),
-                    child: const Text("Sair"),
-                    onPressed: () {},
+                : const Icon(
+                    LineIcons.questionCircle,
+                    color: Color(
+                      0xff8C8C8C,
+                    ),
                   ),
             !isOpen
-                ? CustomButton(
-                    borderRadius: BorderRadius.circular(10),
-                    child: const Text("Sair"),
-                    onPressed: () {},
+                ? const Icon(
+                    Icons.exit_to_app_outlined,
+                    color: Color(0xff8C8C8C),
                   )
                 : const SizedBox.shrink()
           ],

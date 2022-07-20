@@ -1,5 +1,5 @@
 import 'package:claro_tools/src/components/drawer_menu.dart';
-import 'package:claro_tools/src/widgets/custom_avisos.dart';
+import 'package:claro_tools/src/widgets/widget_card_avisos.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
