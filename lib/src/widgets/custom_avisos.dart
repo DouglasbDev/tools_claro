@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 
-class CardChat extends StatelessWidget {
-  final String? texto;
+class CardAviso extends StatelessWidget {
+  final Widget texto;
   final String? imageUrl;
   final String? title;
   final String? subtitle;
   final IconData? icon;
   final VoidCallback? onpressed;
 
-  const CardChat({
+  const CardAviso({
     Key? key,
     this.imageUrl,
     this.title,
     this.subtitle,
     this.icon,
     this.onpressed,
-    this.texto,
+    this.texto = const Text('Escreva um Aviso'),
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.only(bottom: 10),
       child: Material(
         color: Colors.white,
         borderRadius: BorderRadius.circular(30),
@@ -40,7 +40,7 @@ class CardChat extends StatelessWidget {
               right: 10,
             ),
             child: Padding(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,19 +68,19 @@ class CardChat extends StatelessWidget {
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
                           title!,
-                          style: TextStyle(fontSize: 20),
+                          style: const TextStyle(fontSize: 20),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 8),
                           child: Text(subtitle!),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 30),
-                          child: Text(texto!),
-                        )
+                            padding: const EdgeInsets.only(top: 30),
+                            child: texto)
                       ],
                     ),
                   ),

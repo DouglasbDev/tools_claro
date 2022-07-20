@@ -1,7 +1,6 @@
-import 'package:claro_tools/src/view/home.dart';
-import 'package:claro_tools/src/widgets/card_service.dart';
+import 'package:claro_tools/src/view/home_teste.dart';
 import 'package:flutter/material.dart';
-import 'src/view/login.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const PageLogin(),
+      home: HomeTeste(),
       debugShowCheckedModeBanner: false,
     );
   }

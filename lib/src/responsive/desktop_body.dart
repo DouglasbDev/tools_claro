@@ -1,5 +1,6 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 import '../view/home.dart';
 import '../widgets/widget_text_form_field.dart';
@@ -27,7 +28,7 @@ class MyDesktopBody extends StatelessWidget {
               right: 120,
               child: Center(
                 child: Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   constraints: const BoxConstraints(
                       minWidth: 200,
                       maxWidth: 500,
@@ -102,7 +103,7 @@ class MyDesktopBody extends StatelessWidget {
                                             const MyHomePage()),
                                   );
                                 },
-                                child: const Text(
+                                child:  const Text(
                                   'Entrar',
                                   style: TextStyle(
                                       fontFamily: 'Sora',

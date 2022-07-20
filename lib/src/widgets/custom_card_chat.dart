@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomCardChat extends StatelessWidget {
@@ -16,7 +15,7 @@ class CustomCardChat extends StatelessWidget {
     this.subtitle,
     this.icon,
     this.onpressed,
-    this.sizew = 400,
+    this.sizew = 200,
   }) : super(key: key);
 
   @override
