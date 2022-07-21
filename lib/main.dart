@@ -1,4 +1,5 @@
-import 'package:claro_tools/src/view/home_teste.dart';
+import 'package:claro_tools/src/view/home.dart';
+import 'package:claro_tools/src/view/login.dart';
 import 'package:flutter/material.dart';
 
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeTeste(),
+      home: const PageLogin(),
       debugShowCheckedModeBanner: false,
     );
   }

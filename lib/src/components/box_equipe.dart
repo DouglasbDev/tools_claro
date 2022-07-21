@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 
 class BoxEquipe extends StatelessWidget {
@@ -22,27 +23,116 @@ class BoxEquipe extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Row(
-          children: const [
-            Text(
+          children: [
+            const Text(
               'Equipe',
               style:
                   TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
             ),
             SizedBox(
-              width: 5,
+              height: 50,
+              width: 50,
+              child: Stack(
+                clipBehavior: Clip.none,
+                fit: StackFit.expand,
+                children: [
+                  const CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg"),
+                  ),
+                  Positioned(
+                      top: 4,
+                      left: 15,
+                      child: RawMaterialButton(
+                        onPressed: () {},
+                        constraints:
+                            const BoxConstraints(maxHeight: 12, maxWidth: 12),
+                        elevation: 2.0,
+                        fillColor: Colors.grey,
+                        padding: const EdgeInsets.all(15.0),
+                        shape: const CircleBorder(),
+                      )),
+                ],
+              ),
             ),
-            CircleAvatar(
-              backgroundImage: NetworkImage(
-                  "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg"),
+            SizedBox(
+              height: 50,
+              width: 50,
+              child: Stack(
+                clipBehavior: Clip.none,
+                fit: StackFit.expand,
+                children: [
+                  const CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg"),
+                  ),
+                  Positioned(
+                      top: 4,
+                      left: 15,
+                      child: RawMaterialButton(
+                        onPressed: () {},
+                        constraints:
+                            const BoxConstraints(maxHeight: 12, maxWidth: 12),
+                        elevation: 2.0,
+                        fillColor: Colors.green,
+                        padding: const EdgeInsets.all(15.0),
+                        shape: const CircleBorder(),
+                      )),
+                ],
+              ),
             ),
-            CircleAvatar(
-              backgroundImage: NetworkImage(
-                  "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg"),
+            SizedBox(
+              height: 50,
+              width: 50,
+              child: Stack(
+                clipBehavior: Clip.none,
+                fit: StackFit.expand,
+                children: [
+                  const CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg"),
+                  ),
+                  Positioned(
+                      top: 4,
+                      left: 15,
+                      child: RawMaterialButton(
+                        onPressed: () {},
+                        constraints:
+                            const BoxConstraints(maxHeight: 12, maxWidth: 12),
+                        elevation: 2.0,
+                        fillColor: Colors.green,
+                        padding: const EdgeInsets.all(15.0),
+                        shape: const CircleBorder(),
+                      )),
+                ],
+              ),
             ),
-            CircleAvatar(
-              backgroundImage: NetworkImage(
-                  "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg"),
-            )
+            SizedBox(
+              height: 50,
+              width: 50,
+              child: Stack(
+                clipBehavior: Clip.none,
+                fit: StackFit.expand,
+                children: [
+                  const CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg"),
+                  ),
+                  Positioned(
+                      top: 4,
+                      left: 15,
+                      child: RawMaterialButton(
+                        onPressed: () {},
+                        constraints:
+                            const BoxConstraints(maxHeight: 12, maxWidth: 12),
+                        elevation: 2.0,
+                        fillColor: Colors.red,
+                        padding: const EdgeInsets.all(15.0),
+                        shape: const CircleBorder(),
+                      )),
+                ],
+              ),
+            ),
           ],
         ),
       ),

@@ -99,11 +99,10 @@ class MyDesktopBody extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            const MyHomePage()),
+                                        builder: (context) => HomePage()),
                                   );
                                 },
-                                child:  const Text(
+                                child: const Text(
                                   'Entrar',
                                   style: TextStyle(
                                       fontFamily: 'Sora',

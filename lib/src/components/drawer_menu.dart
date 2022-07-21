@@ -71,53 +71,108 @@ class _DrawerMenuState extends State<DrawerMenu> {
                         )
                       : const SizedBox.shrink(),
                   isOpen
-                      ? InkWell(
-                          child: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                isOpen = !isOpen;
-                              });
-                            },
-                            icon: const Icon(
-                              LineIcons.alternateArrowCircleLeft,
-                              size: 30,
-                              color: Colors.black54,
-                            ),
+                      ? SizedBox(
+                          height: 80,
+                          width: 80,
+                          child: Stack(
+                            clipBehavior: Clip.none,
+                            fit: StackFit.expand,
+                            children: [
+                              Positioned(
+                                  bottom: 10,
+                                  right: -10,
+                                  child: InkWell(
+                                    child: RawMaterialButton(
+                                      constraints: BoxConstraints(
+                                          minHeight: 40, minWidth: 80),
+                                      fillColor: Color(0xff1f1f1),
+                                      onPressed: () {
+                                        setState(() {
+                                          isOpen = !isOpen;
+                                        });
+                                      },
+                                      elevation: 2.0,
+                                      child: const Icon(
+                                        LineIcons.alternateArrowCircleLeft,
+                                        size: 30,
+                                        color: Colors.white,
+                                      ),
+                                      padding: EdgeInsets.all(5.0),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(16)),
+                                    ),
+                                  )),
+                            ],
                           ),
                         )
-                      : InkWell(
-                          child: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                isOpen = !isOpen;
-                              });
-                            },
-                            icon: const Icon(
-                              LineIcons.alternateArrowCircleRight,
-                              size: 30,
-                              color: Colors.black54,
-                            ),
+                      : SizedBox(
+                          height: 80,
+                          width: 80,
+                          child: Stack(
+                            clipBehavior: Clip.none,
+                            fit: StackFit.expand,
+                            children: [
+                              Positioned(
+                                  bottom: 10,
+                                  right: -10,
+                                  child: InkWell(
+                                    child: RawMaterialButton(
+                                      constraints: BoxConstraints(
+                                          minHeight: 40, minWidth: 80),
+                                      fillColor: Color(0xff1f1f1),
+                                      onPressed: () {
+                                        setState(() {
+                                          isOpen = !isOpen;
+                                        });
+                                      },
+                                      elevation: 2.0,
+                                      child: const Icon(
+                                        LineIcons.alternateArrowCircleLeft,
+                                        size: 30,
+                                        color: Colors.white,
+                                      ),
+                                      padding: EdgeInsets.all(5.0),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(16)),
+                                    ),
+                                  )),
+                            ],
                           ),
-                        ),
+                        )
                 ],
               ),
             ),
             isOpen
                 ? Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      CircleAvatar(
-                        backgroundImage: NetworkImage(
-                            "https://miro.medium.com/max/554/1*Ld1KM2WSfJ9YQ4oeRf7q4Q.jpeg"),
+                    children: [
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(80),
+                          ),
+                          color: Colors.red,
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(80),
+                          child: Image.network(
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-i8YqO-8AOiNEIRZEW22gQbRswOIjIDyhpQ&usqp=CAU",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
-                      SizedBox(
-                        height: 10,
+                      const SizedBox(
+                        height: 15,
                       ),
-                      CustomTextField(
+                      const CustomTextField(
                         hint: 'Pesquisa',
                         prefix: Icons.search,
                       ),
-                      Center(
+                      const Center(
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
@@ -131,19 +186,20 @@ class _DrawerMenuState extends State<DrawerMenu> {
                       ),
                     ],
                   )
-                : SimpleCard(
-                    color: Colors.white60,
-                    size: 50,
-                    label: const Text('label'),
-                    borderRadius: BorderRadius.circular(50),
-                    icon: Icon(
+                : Container(
+                    padding: const EdgeInsets.all(6),
+                    decoration: const BoxDecoration(
+                      color: Colors.white24,
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(
                       Icons.search,
-                      color: Color(0xff8C8C8C),
-                      size: 100,
+                      color: Colors.white70,
+                      size: 35,
                     ),
                   ),
             const SizedBox(
-              height: 30,
+              height: 10,
             ),
             Expanded(
               child: GridView.builder(
@@ -170,13 +226,12 @@ class _DrawerMenuState extends State<DrawerMenu> {
                           style: TextStyle(fontSize: 10, color: Colors.white),
                         ),
                       ),
-                      const SizedBox(
-                        width: 30,
-                      ),
                       Expanded(
                           child: CustomButton.icon(
                         sizeh: 36,
                         color: Colors.white,
+                        highlightcolor: Color(0xff1f1f1),
+                        hovercolor: Color(0xff1f1f1),
                         icon: const Icon(
                           LineIcons.questionCircle,
                           color: Colors.grey,
@@ -189,12 +244,14 @@ class _DrawerMenuState extends State<DrawerMenu> {
                         onPressed: () {},
                       )),
                       const SizedBox(
-                        width: 30,
+                        width: 10,
                       ),
                       Expanded(
                         child: CustomButton.icon(
                           sizeh: 36,
                           color: Colors.white,
+                          highlightcolor: Color(0xff1f1f1),
+                          hovercolor: Color(0xff1f1f1),
                           borderRadius: BorderRadius.circular(10),
                           child: const Text(
                             "Sair",
@@ -213,14 +270,12 @@ class _DrawerMenuState extends State<DrawerMenu> {
                   )
                 : const Icon(
                     LineIcons.questionCircle,
-                    color: Color(
-                      0xff8C8C8C,
-                    ),
+                    color: Colors.white,
                   ),
             !isOpen
                 ? const Icon(
                     Icons.exit_to_app_outlined,
-                    color: Color(0xff8C8C8C),
+                    color: Colors.white,
                   )
                 : const SizedBox.shrink()
           ],

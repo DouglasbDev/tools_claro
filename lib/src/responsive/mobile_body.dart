@@ -10,17 +10,16 @@ class MyMobileBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-
         body: Stack(
           children: [
-              SizedBox(
-                height: double.infinity,
-                width: double.infinity,
-                child: Image.asset(
-                  'assets/images/claro_login.png',
-                  fit: BoxFit.cover,
-                ),
+            SizedBox(
+              height: double.infinity,
+              width: double.infinity,
+              child: Image.asset(
+                'assets/images/claro_login.png',
+                fit: BoxFit.cover,
               ),
+            ),
             Padding(
               padding: EdgeInsets.only(right: 45),
               child: Container(
@@ -28,8 +27,8 @@ class MyMobileBody extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * .80,
                 width: MediaQuery.of(context).size.height * .5,
                 margin: EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width / 10,
-                      top: MediaQuery.of(context).size.width / 8),
+                    left: MediaQuery.of(context).size.width / 10,
+                    top: MediaQuery.of(context).size.width / 8),
                 decoration: BoxDecoration(
                   boxShadow: const [
                     BoxShadow(
@@ -57,14 +56,11 @@ class MyMobileBody extends StatelessWidget {
                               height: MediaQuery.of(context).size.height / 20,
                             ),
                           )),
-                      
                       Text(
                         "Bem-vindo(a) ao portal Claro Tools",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                        fontSize: 22, 
-                        fontWeight: FontWeight.bold
-                        ),
+                            fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(
                         height: 10,
@@ -91,7 +87,7 @@ class MyMobileBody extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const MyHomePage()),
+                                  builder: (context) => HomePage()),
                             );
                           },
                           child: const Text(
@@ -99,8 +95,7 @@ class MyMobileBody extends StatelessWidget {
                             style: TextStyle(
                                 fontFamily: 'Sora',
                                 fontSize: 20,
-                                fontWeight: FontWeight.w600
-                                ),
+                                fontWeight: FontWeight.w600),
                           ),
                           style: ButtonStyle(
                             shape: MaterialStateProperty.resolveWith((states) {
