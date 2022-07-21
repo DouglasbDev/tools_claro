@@ -117,7 +117,7 @@ class _CustomButtonState extends State<CustomButton> {
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             if (widget.icon != null) ...{
               Padding(
-                padding: const EdgeInsets.only(right: 5),
+                padding: const EdgeInsets.only(right: 0),
                 child: widget.icon!,
               )
             },

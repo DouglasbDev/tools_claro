@@ -18,12 +18,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       extendBody: true,
       body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           DrawerMenu(),
           Container(
             child: Padding(
-              padding: const EdgeInsets.only(left: 0, right: 46),
+              padding: const EdgeInsets.only(left: 20, right: 0),
               child: SizedBox(
                 width: MediaQuery.of(context).size.height / 0.86,
                 child: Column(

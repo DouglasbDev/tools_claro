@@ -36,7 +36,7 @@ class _SimpleCardState extends State<SimpleCard> {
       width: widget.size,
       padding: EdgeInsets.all(8 / 100 * widget.size),
       decoration: BoxDecoration(
-        borderRadius: borderRadius, //BorderRadius.circular(8 / 100 * size),
+        borderRadius: borderRadius,
         color: widget.color,
       ),
       child: FittedBox(

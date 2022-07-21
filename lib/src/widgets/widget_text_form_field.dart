@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   final Widget? label;
+  final EdgeInsetsGeometry padding;
   final String? hint;
   final IconData? icon;
   final IconData? prefix;
@@ -24,12 +25,13 @@ class CustomTextField extends StatelessWidget {
     this.onSaved,
     this.onChanged,
     this.obscureText = false,
+    this.padding = const EdgeInsetsDirectional.fromSTEB(25, 0, 25, 5),
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(25, 0, 25, 5),
+      padding: padding,
       child: TextFormField(
           autovalidateMode: AutovalidateMode.onUserInteraction,
           validator: validator,
