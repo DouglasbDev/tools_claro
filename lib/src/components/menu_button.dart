@@ -10,24 +10,17 @@ class MenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
-      width: 60,
-      child: InkWell(
-        child: RawMaterialButton(
-          constraints: BoxConstraints(minHeight: 40, minWidth: 80),
-          fillColor: Color(0xff1f1f1),
-          onPressed: onPressed,
-          elevation: 2.0,
-          child: Icon(
-            icon,
-            size: 30,
-            color: Colors.white,
+        height: 60,
+        width: 60,
+        child: InkWell(
+          child: IconButton(
+            onPressed: onPressed,
+            icon: Icon(
+              icon,
+              size: 30,
+              color: Colors.white,
+            ),
           ),
-          padding: EdgeInsets.all(5.0),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        ),
-      ),
-    );
+        ));
   }
 }
