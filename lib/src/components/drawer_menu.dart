@@ -3,7 +3,7 @@ import 'package:claro_tools/src/components/colors.dart';
 import 'package:claro_tools/src/components/logo.dart';
 import 'package:claro_tools/src/components/menu_button.dart';
 import 'package:claro_tools/src/components/rounded_image.dart';
-import 'package:claro_tools/src/components/title_widget.dart';
+import 'package:claro_tools/src/widgets/title_widget.dart';
 import 'package:claro_tools/src/widgets/widget_button.dart';
 import 'package:claro_tools/src/widgets/card_service.dart';
 import 'package:claro_tools/src/widgets/widget_text_form_field.dart';
@@ -37,9 +37,9 @@ class _DrawerMenuState extends State<DrawerMenu> {
     late Widget logoTratada;
 
     if (isOpen) {
-      logoTratada = Logo();
+      logoTratada = const Logo();
     } else {
-      logoTratada = SizedBox.shrink();
+      logoTratada = const SizedBox.shrink();
     }
     return Padding(
       padding: const EdgeInsets.all(10),
@@ -93,7 +93,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                             )
                           : Column(
                               children: [
-                                SizedBox(height: 60),
+                                const SizedBox(height: 60),
                                 Container(
                                   padding: const EdgeInsets.all(6),
                                   decoration: const BoxDecoration(
@@ -118,8 +118,8 @@ class _DrawerMenuState extends State<DrawerMenu> {
                   child: GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: isOpen ? 3 : 1,
-                        crossAxisSpacing: isOpen ? 20.0 : 5,
-                        mainAxisSpacing: isOpen ? 20 : 5),
+                        crossAxisSpacing: isOpen ? 5 : 5,
+                        mainAxisSpacing: isOpen ? 5 : 5),
                     itemCount: 9,
                     itemBuilder: (context, index) {
                       return const Padding(
@@ -143,19 +143,19 @@ class _DrawerMenuState extends State<DrawerMenu> {
                               crossAxisAlignment: WrapCrossAlignment.center,
                               children: [
                                 const Text(
-                                  'tools v.01.2022 by redeinova',
+                                  'tools v.01.2022\n by redeinova',
                                   style: TextStyle(
                                       fontSize: 10, color: Colors.white),
                                 ),
                                 const SizedBox(
-                                  width: 20,
+                                  width: 65,
                                 ),
                                 CustomButton.icon(
                                   sizeh: 36,
                                   sizew: 100,
                                   color: Colors.white,
-                                  highlightcolor: Color(0xff1f1f1),
-                                  hovercolor: Color(0xff1f1f1),
+                                  highlightcolor: const Color(0x0ff1f1f1),
+                                  hovercolor: const Color(0x0ff1f1f1),
                                   icon: const Icon(
                                     LineIcons.questionCircle,
                                     color: Colors.grey,
@@ -174,8 +174,8 @@ class _DrawerMenuState extends State<DrawerMenu> {
                                   sizeh: 36,
                                   sizew: 70,
                                   color: Colors.white,
-                                  highlightcolor: Color(0xff1f1f1),
-                                  hovercolor: Color(0xff1f1f1),
+                                  highlightcolor: const Color(0x0ff1f1f1),
+                                  hovercolor: const Color(0x0ff1f1f1),
                                   borderRadius: BorderRadius.circular(10),
                                   child: const Text(
                                     "Sair",
@@ -204,7 +204,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                         color: Colors.white,
                       )
                     : const SizedBox.shrink(),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
               ],

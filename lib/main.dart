@@ -1,4 +1,3 @@
-import 'package:claro_tools/src/view/home.dart';
 import 'package:claro_tools/src/view/login.dart';
 import 'package:flutter/material.dart';
 

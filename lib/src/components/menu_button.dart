@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
 
 class MenuButton extends StatelessWidget {
   final void Function()? onPressed;
@@ -10,17 +9,18 @@ class MenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 60,
-        width: 60,
-        child: InkWell(
-          child: IconButton(
-            onPressed: onPressed,
-            icon: Icon(
-              icon,
-              size: 30,
-              color: Colors.white,
-            ),
+      height: 60,
+      width: 60,
+      child: InkWell(
+        child: IconButton(
+          onPressed: onPressed,
+          icon: Icon(
+            icon,
+            size: 30,
+            color: Colors.white,
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
