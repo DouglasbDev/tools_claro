@@ -14,16 +14,16 @@ import 'package:line_icons/line_icons.dart';
 class DrawerMenu extends StatefulWidget {
   DrawerMenu({Key? key}) : super(key: key);
 
-  List<String> images = [
-    "images/ibase_de_dados.png",
-    "images/ijornada.png",
-    "images/itrajetos.png",
-    "images/iestoque.png",
-    "images/ipesquisa.png",
-    "images/itarefas.png",
-    "images/itrajetos.png",
-    "images/iavisos.png",
-  ];
+  // List<String> images = [
+  //   "images/ibase_de_dados.png",
+  //   "images/ijornada.png",
+  //   "images/itrajetos.png",
+  //   "images/iestoque.png",
+  //   "images/ipesquisa.png",
+  //   "images/itarefas.png",
+  //   "images/itrajetos.png",
+  //   "images/iavisos.png",
+  // ];
 
   @override
   State<DrawerMenu> createState() => _DrawerMenuState();
